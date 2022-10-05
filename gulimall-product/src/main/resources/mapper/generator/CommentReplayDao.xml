@@ -4,7 +4,7 @@
 <mapper namespace="com.dhu.gulimall.generator.dao.CommentReplayDao">
 
 	<!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="com.dhu.gulimall.generator.entity.CommentReplayEntity" id="commentReplayMap">
+    <resultMap type="com.dhu.gulimall.product.entity.CommentReplayEntity" id="commentReplayMap">
         <result property="id" column="id"/>
         <result property="commentId" column="comment_id"/>
         <result property="replyId" column="reply_id"/>

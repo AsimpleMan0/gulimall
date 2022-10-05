@@ -22,10 +22,10 @@ import com.dhu.common.utils.R;
  *
  * @author cosmos
  * @email asimpleman.one@gmail.com
- * @date 2022-10-05 15:50:13
+ * @date 2022-10-05 16:54:20
  */
 @RestController
-@RequestMapping("generator/attrgroup")
+@RequestMapping("product/attrgroup")
 public class AttrGroupController {
     @Autowired
     private AttrGroupService attrGroupService;
@@ -34,7 +34,7 @@ public class AttrGroupController {
      * 列表
      */
     @RequestMapping("/list")
-    // @RequiresPermissions("generator:attrgroup:list")
+    // @RequiresPermissions("product:attrgroup:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = attrGroupService.queryPage(params);
 
@@ -46,7 +46,7 @@ public class AttrGroupController {
      * 信息
      */
     @RequestMapping("/info/{attrGroupId}")
-    // @RequiresPermissions("generator:attrgroup:info")
+    // @RequiresPermissions("product:attrgroup:info")
     public R info(@PathVariable("attrGroupId") Long attrGroupId){
 		AttrGroupEntity attrGroup = attrGroupService.getById(attrGroupId);
 
@@ -57,7 +57,7 @@ public class AttrGroupController {
      * 保存
      */
     @RequestMapping("/save")
-    // @RequiresPermissions("generator:attrgroup:save")
+    // @RequiresPermissions("product:attrgroup:save")
     public R save(@RequestBody AttrGroupEntity attrGroup){
 		attrGroupService.save(attrGroup);
 
@@ -68,7 +68,7 @@ public class AttrGroupController {
      * 修改
      */
     @RequestMapping("/update")
-    // @RequiresPermissions("generator:attrgroup:update")
+    // @RequiresPermissions("product:attrgroup:update")
     public R update(@RequestBody AttrGroupEntity attrGroup){
 		attrGroupService.updateById(attrGroup);
 
@@ -79,7 +79,7 @@ public class AttrGroupController {
      * 删除
      */
     @RequestMapping("/delete")
-    // @RequiresPermissions("generator:attrgroup:delete")
+    // @RequiresPermissions("product:attrgroup:delete")
     public R delete(@RequestBody Long[] attrGroupIds){
 		attrGroupService.removeByIds(Arrays.asList(attrGroupIds));
 

@@ -22,10 +22,10 @@ import com.dhu.common.utils.R;
  *
  * @author cosmos
  * @email asimpleman.one@gmail.com
- * @date 2022-10-05 15:50:13
+ * @date 2022-10-05 16:54:20
  */
 @RestController
-@RequestMapping("generator/productattrvalue")
+@RequestMapping("product/productattrvalue")
 public class ProductAttrValueController {
     @Autowired
     private ProductAttrValueService productAttrValueService;
@@ -34,7 +34,7 @@ public class ProductAttrValueController {
      * 列表
      */
     @RequestMapping("/list")
-    // @RequiresPermissions("generator:productattrvalue:list")
+    // @RequiresPermissions("product:productattrvalue:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = productAttrValueService.queryPage(params);
 
@@ -46,7 +46,7 @@ public class ProductAttrValueController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    // @RequiresPermissions("generator:productattrvalue:info")
+    // @RequiresPermissions("product:productattrvalue:info")
     public R info(@PathVariable("id") Long id){
 		ProductAttrValueEntity productAttrValue = productAttrValueService.getById(id);
 
@@ -57,7 +57,7 @@ public class ProductAttrValueController {
      * 保存
      */
     @RequestMapping("/save")
-    // @RequiresPermissions("generator:productattrvalue:save")
+    // @RequiresPermissions("product:productattrvalue:save")
     public R save(@RequestBody ProductAttrValueEntity productAttrValue){
 		productAttrValueService.save(productAttrValue);
 
@@ -68,7 +68,7 @@ public class ProductAttrValueController {
      * 修改
      */
     @RequestMapping("/update")
-    // @RequiresPermissions("generator:productattrvalue:update")
+    // @RequiresPermissions("product:productattrvalue:update")
     public R update(@RequestBody ProductAttrValueEntity productAttrValue){
 		productAttrValueService.updateById(productAttrValue);
 
@@ -79,7 +79,7 @@ public class ProductAttrValueController {
      * 删除
      */
     @RequestMapping("/delete")
-    // @RequiresPermissions("generator:productattrvalue:delete")
+    // @RequiresPermissions("product:productattrvalue:delete")
     public R delete(@RequestBody Long[] ids){
 		productAttrValueService.removeByIds(Arrays.asList(ids));
 

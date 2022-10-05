@@ -22,10 +22,10 @@ import com.dhu.common.utils.R;
  *
  * @author cosmos
  * @email asimpleman.one@gmail.com
- * @date 2022-10-05 15:50:13
+ * @date 2022-10-05 16:54:20
  */
 @RestController
-@RequestMapping("generator/skusaleattrvalue")
+@RequestMapping("product/skusaleattrvalue")
 public class SkuSaleAttrValueController {
     @Autowired
     private SkuSaleAttrValueService skuSaleAttrValueService;
@@ -34,7 +34,7 @@ public class SkuSaleAttrValueController {
      * 列表
      */
     @RequestMapping("/list")
-    // @RequiresPermissions("generator:skusaleattrvalue:list")
+    // @RequiresPermissions("product:skusaleattrvalue:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = skuSaleAttrValueService.queryPage(params);
 
@@ -46,7 +46,7 @@ public class SkuSaleAttrValueController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    // @RequiresPermissions("generator:skusaleattrvalue:info")
+    // @RequiresPermissions("product:skusaleattrvalue:info")
     public R info(@PathVariable("id") Long id){
 		SkuSaleAttrValueEntity skuSaleAttrValue = skuSaleAttrValueService.getById(id);
 
@@ -57,7 +57,7 @@ public class SkuSaleAttrValueController {
      * 保存
      */
     @RequestMapping("/save")
-    // @RequiresPermissions("generator:skusaleattrvalue:save")
+    // @RequiresPermissions("product:skusaleattrvalue:save")
     public R save(@RequestBody SkuSaleAttrValueEntity skuSaleAttrValue){
 		skuSaleAttrValueService.save(skuSaleAttrValue);
 
@@ -68,7 +68,7 @@ public class SkuSaleAttrValueController {
      * 修改
      */
     @RequestMapping("/update")
-    // @RequiresPermissions("generator:skusaleattrvalue:update")
+    // @RequiresPermissions("product:skusaleattrvalue:update")
     public R update(@RequestBody SkuSaleAttrValueEntity skuSaleAttrValue){
 		skuSaleAttrValueService.updateById(skuSaleAttrValue);
 
@@ -79,7 +79,7 @@ public class SkuSaleAttrValueController {
      * 删除
      */
     @RequestMapping("/delete")
-    // @RequiresPermissions("generator:skusaleattrvalue:delete")
+    // @RequiresPermissions("product:skusaleattrvalue:delete")
     public R delete(@RequestBody Long[] ids){
 		skuSaleAttrValueService.removeByIds(Arrays.asList(ids));
 

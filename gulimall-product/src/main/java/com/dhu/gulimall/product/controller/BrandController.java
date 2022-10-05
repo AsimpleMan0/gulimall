@@ -22,10 +22,10 @@ import com.dhu.common.utils.R;
  *
  * @author cosmos
  * @email asimpleman.one@gmail.com
- * @date 2022-10-05 15:50:13
+ * @date 2022-10-05 16:54:20
  */
 @RestController
-@RequestMapping("generator/brand")
+@RequestMapping("product/brand")
 public class BrandController {
     @Autowired
     private BrandService brandService;
@@ -34,7 +34,7 @@ public class BrandController {
      * 列表
      */
     @RequestMapping("/list")
-    // @RequiresPermissions("generator:brand:list")
+    // @RequiresPermissions("product:brand:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = brandService.queryPage(params);
 
@@ -46,7 +46,7 @@ public class BrandController {
      * 信息
      */
     @RequestMapping("/info/{brandId}")
-    // @RequiresPermissions("generator:brand:info")
+    // @RequiresPermissions("product:brand:info")
     public R info(@PathVariable("brandId") Long brandId){
 		BrandEntity brand = brandService.getById(brandId);
 
@@ -57,7 +57,7 @@ public class BrandController {
      * 保存
      */
     @RequestMapping("/save")
-    // @RequiresPermissions("generator:brand:save")
+    // @RequiresPermissions("product:brand:save")
     public R save(@RequestBody BrandEntity brand){
 		brandService.save(brand);
 
@@ -68,7 +68,7 @@ public class BrandController {
      * 修改
      */
     @RequestMapping("/update")
-    // @RequiresPermissions("generator:brand:update")
+    // @RequiresPermissions("product:brand:update")
     public R update(@RequestBody BrandEntity brand){
 		brandService.updateById(brand);
 
@@ -79,7 +79,7 @@ public class BrandController {
      * 删除
      */
     @RequestMapping("/delete")
-    // @RequiresPermissions("generator:brand:delete")
+    // @RequiresPermissions("product:brand:delete")
     public R delete(@RequestBody Long[] brandIds){
 		brandService.removeByIds(Arrays.asList(brandIds));
 

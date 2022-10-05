@@ -22,10 +22,10 @@ import com.dhu.common.utils.R;
  *
  * @author cosmos
  * @email asimpleman.one@gmail.com
- * @date 2022-10-05 15:50:13
+ * @date 2022-10-05 16:54:20
  */
 @RestController
-@RequestMapping("generator/spuinfo")
+@RequestMapping("product/spuinfo")
 public class SpuInfoController {
     @Autowired
     private SpuInfoService spuInfoService;
@@ -34,7 +34,7 @@ public class SpuInfoController {
      * 列表
      */
     @RequestMapping("/list")
-    // @RequiresPermissions("generator:spuinfo:list")
+    // @RequiresPermissions("product:spuinfo:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = spuInfoService.queryPage(params);
 
@@ -46,7 +46,7 @@ public class SpuInfoController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    // @RequiresPermissions("generator:spuinfo:info")
+    // @RequiresPermissions("product:spuinfo:info")
     public R info(@PathVariable("id") Long id){
 		SpuInfoEntity spuInfo = spuInfoService.getById(id);
 
@@ -57,7 +57,7 @@ public class SpuInfoController {
      * 保存
      */
     @RequestMapping("/save")
-    // @RequiresPermissions("generator:spuinfo:save")
+    // @RequiresPermissions("product:spuinfo:save")
     public R save(@RequestBody SpuInfoEntity spuInfo){
 		spuInfoService.save(spuInfo);
 
@@ -68,7 +68,7 @@ public class SpuInfoController {
      * 修改
      */
     @RequestMapping("/update")
-    // @RequiresPermissions("generator:spuinfo:update")
+    // @RequiresPermissions("product:spuinfo:update")
     public R update(@RequestBody SpuInfoEntity spuInfo){
 		spuInfoService.updateById(spuInfo);
 
@@ -79,7 +79,7 @@ public class SpuInfoController {
      * 删除
      */
     @RequestMapping("/delete")
-    // @RequiresPermissions("generator:spuinfo:delete")
+    // @RequiresPermissions("product:spuinfo:delete")
     public R delete(@RequestBody Long[] ids){
 		spuInfoService.removeByIds(Arrays.asList(ids));
 

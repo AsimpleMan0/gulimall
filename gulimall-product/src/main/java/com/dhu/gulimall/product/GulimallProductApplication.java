@@ -2,7 +2,7 @@ package com.dhu.gulimall.product;
 
 /*
  *   @Author: Cosmos
- *   @Date: 2022/10/5 16:21
+ *   @Date: 2022/10/5 16:57
  */
 
 import org.mybatis.spring.annotation.MapperScan;

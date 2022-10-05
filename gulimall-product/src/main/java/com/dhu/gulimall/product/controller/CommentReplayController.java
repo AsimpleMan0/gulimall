@@ -22,10 +22,10 @@ import com.dhu.common.utils.R;
  *
  * @author cosmos
  * @email asimpleman.one@gmail.com
- * @date 2022-10-05 15:50:13
+ * @date 2022-10-05 16:54:20
  */
 @RestController
-@RequestMapping("generator/commentreplay")
+@RequestMapping("product/commentreplay")
 public class CommentReplayController {
     @Autowired
     private CommentReplayService commentReplayService;
@@ -34,7 +34,7 @@ public class CommentReplayController {
      * 列表
      */
     @RequestMapping("/list")
-    // @RequiresPermissions("generator:commentreplay:list")
+    // @RequiresPermissions("product:commentreplay:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = commentReplayService.queryPage(params);
 
@@ -46,7 +46,7 @@ public class CommentReplayController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    // @RequiresPermissions("generator:commentreplay:info")
+    // @RequiresPermissions("product:commentreplay:info")
     public R info(@PathVariable("id") Long id){
 		CommentReplayEntity commentReplay = commentReplayService.getById(id);
 
@@ -57,7 +57,7 @@ public class CommentReplayController {
      * 保存
      */
     @RequestMapping("/save")
-    // @RequiresPermissions("generator:commentreplay:save")
+    // @RequiresPermissions("product:commentreplay:save")
     public R save(@RequestBody CommentReplayEntity commentReplay){
 		commentReplayService.save(commentReplay);
 
@@ -68,7 +68,7 @@ public class CommentReplayController {
      * 修改
      */
     @RequestMapping("/update")
-    // @RequiresPermissions("generator:commentreplay:update")
+    // @RequiresPermissions("product:commentreplay:update")
     public R update(@RequestBody CommentReplayEntity commentReplay){
 		commentReplayService.updateById(commentReplay);
 
@@ -79,7 +79,7 @@ public class CommentReplayController {
      * 删除
      */
     @RequestMapping("/delete")
-    // @RequiresPermissions("generator:commentreplay:delete")
+    // @RequiresPermissions("product:commentreplay:delete")
     public R delete(@RequestBody Long[] ids){
 		commentReplayService.removeByIds(Arrays.asList(ids));
 
